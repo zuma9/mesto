@@ -1,0 +1,15 @@
+.content {
+  max-width: 880px;
+  min-width: 288px;
+  margin: 36px auto 67px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 47px;
+}
+
+@media screen and (max-width: 984px) {
+  .content {
+    gap: 36px;
+    margin: 38px auto 48px;
+  }
+}

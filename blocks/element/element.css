@@ -1,0 +1,7 @@
+.element {
+  max-width: 282px;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  position: relative;
+}
