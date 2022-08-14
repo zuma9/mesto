@@ -10,6 +10,7 @@
 @media screen and (max-width: 984px) {
   .content {
     gap: 36px;
-    margin: 38px auto 48px;
+    margin-top: 38px;
+    margin-bottom: 48px;
   }
 }

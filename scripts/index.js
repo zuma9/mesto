@@ -21,6 +21,7 @@ function editPopupProfile(evt) {
   evt.preventDefault();
   textName.textContent = nameInput.value;
   jobName.textContent = jobInput.value;
+  popup.classList.remove('popup_opened');
 }
 
 openButton.addEventListener('click', addPopup);

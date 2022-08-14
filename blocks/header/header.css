@@ -2,7 +2,7 @@
   margin: 0 auto;
   width: 880px;
   padding-bottom: 41px;
-  border-bottom: 1px solid #545454;
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
 }
 
 @media screen and (max-width: 984px) {
@@ -13,7 +13,7 @@
 
 @media screen and (max-width: 600px) {
   .header {
-    padding-bottom: 31.6px;
+    padding-bottom: 32px;
     width: 100%;
   }
 }
