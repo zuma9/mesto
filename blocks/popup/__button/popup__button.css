@@ -26,3 +26,9 @@
     margin-top: 45px;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .popup__button {
+    padding: 8px 0 12px;
+  }
+}
