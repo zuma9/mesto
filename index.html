@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="pages/index.css">
+  <link rel="stylesheet" href="./pages/index.css">
 
   <title>Mesto</title>
 </head>
@@ -80,8 +80,8 @@
       <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
         <form class="popup__form">
-          <input type="text" class="popup__field" name="nameInput">
-          <input type="text" class="popup__field" name="jobInput">
+          <input type="text" placeholder="Введите имя" class="popup__field popup__field_type_name" name="nameInput">
+          <input type="text" placeholder="Введите профессию" class="popup__field popup__field_type_job" name="jobInput">
           <button class="popup__button" type="submit">Сохранить</button>
         </form>
         <button class="popup__close" type="button" aria-label="Закрыть">

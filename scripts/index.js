@@ -2,8 +2,8 @@ const popup = document.querySelector('.popup');
 const openButton = document.querySelector('.profile__edit-button');
 const closeButton = popup.querySelector('.popup__close');
 let form = document.querySelector('.popup__form');
-let nameInput = document.querySelector('[name="nameInput"]');//попап имя
-let jobInput = document.querySelector('[name="jobInput"]');//попап job
+let nameInput = document.querySelector('.popup__field_type_name');//попап имя
+let jobInput = document.querySelector('.popup__field_type_job');//попап job
 let textName = document.querySelector('.profile__name');//стр имя
 let jobName = document.querySelector('.profile__profession');//стр job
 
@@ -21,7 +21,7 @@ function editPopupProfile(evt) {
   evt.preventDefault();
   textName.textContent = nameInput.value;
   jobName.textContent = jobInput.value;
-  popup.classList.remove('popup_opened');
+  removePopup ();
 }
 
 openButton.addEventListener('click', addPopup);
