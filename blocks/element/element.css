@@ -6,3 +6,8 @@
   list-style-type: none;
   position: relative;
 }
+
+.element:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
