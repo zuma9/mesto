@@ -1,6 +1,6 @@
 # _Проект Mesto._
 ### Сервис по обмену фотографиями.
-### Сервис предоставляет возможность делиться красивыми фотографиями мест, создан в рамках 4 спринта курса Веб-разработчик от Яндекс Практикум.
+### Сервис предоставляет возможность делиться красивыми фотографиями мест, создан в рамках 5 спринта курса Веб-разработчик от Яндекс Практикум.
 ### Стек технологий:
 ##### * HTML5;
 ##### * JavaScript (базовый уровень);
@@ -13,7 +13,7 @@
 
 # _project Mesto._
 ### Photo sharing service.
-### The service provides an opportunity to share beautiful photos of places, created as part of the 4th sprint of the Web Developer course from Yandex Practicum.
+### The service provides an opportunity to share beautiful photos of places, created as part of the 5th sprint of the Web Developer course from Yandex Practicum.
 ### Technology Stack:
 ##### * HTML5;
 ##### * JavaScript (basic level);

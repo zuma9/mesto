@@ -1,4 +1,6 @@
 .popup__image-text {
+    font-family: 'Inter';
+    font-style: normal;
     margin: 0;
     max-width: 291px;
     font-weight: 400;
