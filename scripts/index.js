@@ -57,11 +57,6 @@ closeButtons.forEach((button) => {
   button.addEventListener('click', () => closePopup(popup));
 });
 
-//попап картинка
-function addPopupBigImage() {
-  openPopup(popupBigImage);
-}
-
 //занесение инф с попапа профиля на стр
 function editProfileUser(evt) {
   evt.preventDefault();
@@ -87,7 +82,6 @@ const openPopupImage = function(link, title) {
   popupImage.src = link;
   popupImage.alt = title;
   popupImageText.textContent = title;
-  addPopupBigImage(popupImage);
   openPopup(popupBigImage);
 }
 
