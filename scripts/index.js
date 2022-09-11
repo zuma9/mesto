@@ -6,14 +6,14 @@ const addButtonProfile = document.querySelector('.profile__add-button');
 const closeButtons = document.querySelectorAll('.popup__close');
 const popupImage = document.querySelector('.popup__image');
 const popupImageText = document.querySelector('.popup__image-text');
+const formProfile = document.querySelector('.popup__form_profile');
+const nameInput = document.querySelector('.popup__field_type_name');//попап профиль имя
+const jobInput = document.querySelector('.popup__field_type_job');//попап профиль профессия
+const formPlace = document.querySelector('.popup__form_place');
 const imageInputPlace = document.querySelector('.popup__field_type_address');//попап место ссылка
 const titleInputPlace = document.querySelector('.popup__field_type_title');//попап место название
-const formProfile = document.querySelector('.popup__form_profile');
-const nameInput = document.querySelector('.popup__field_type_name');//попап имя
-const jobInput = document.querySelector('.popup__field_type_job');//попап job
-const textName = document.querySelector('.profile__name');//стр имя
-const jobName = document.querySelector('.profile__profession');//стр job
-const formPlace = document.querySelector('.popup__form_place');
+const textName = document.querySelector('.profile__name');//профиль на стр имя
+const jobName = document.querySelector('.profile__profession');//профиль на стр профессия
 const templateCard = document.querySelector('.templateCard');
 const elements = document.querySelector('.elements');
 
@@ -42,13 +42,18 @@ function makeNewCard(name, link) {
   return newCard;
 }
 
-//попап универсальная
+//попап универсальная откр
 function openPopup(element) {
   element.classList.add('popup_opened');
+  element.addEventListener('click', closePopupOverlay);
+  document.addEventListener('keydown', closePopupEsc);
 }
 
+//попап универсальная закр
 function closePopup(element) {
   element.classList.remove('popup_opened');
+  element.removeEventListener('click', closePopupOverlay);
+  document.removeEventListener('keydown', closePopupEsc);
 }
 
 //универсальный обработчик крестиков
@@ -98,6 +103,24 @@ const addCard = function (evt) {
 initialCards.forEach((el) => {
   elements.append(makeNewCard(el.name, el.link));
 });
+
+//закрытие попапа на оверлей
+function closePopupOverlay(evt) {
+  if (evt.target === evt.currentTarget) {
+    const popup = evt.target;
+    closePopup(popup);
+  }
+}
+
+//закрытие попап на escape
+function closePopupEsc(evt) {
+  if (evt.key === 'Escape') {
+    const popup = document.querySelector('.popup_opened');
+    closePopup(popup);
+  }
+}
+
+
 
 editButtonProfile.addEventListener('click', addPopup);
 addButtonProfile.addEventListener('click', openPopupPlace);

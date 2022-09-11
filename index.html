@@ -38,26 +38,33 @@
     <section class="popup popup-profile">
       <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="popup__form popup__form_profile">
-          <input type="text" placeholder="Введите имя" class="popup__field popup__field_type_name" name="nameInput">
-          <input type="text" placeholder="Введите профессию" class="popup__field popup__field_type_job" name="jobInput">
-          <button class="popup__button" type="submit">Сохранить</button>
+        <form class="popup__form popup__form_profile" novalidate>
+          <fieldset class="popup__form-set">
+          <input type="text" placeholder="Введите имя" id="name-input" class="popup__field popup__field_type_name" name="nameInput" minlength="2" maxlength="40" required>
+          <span class="popup__field-error"></span>
+          <input type="text" placeholder="Введите профессию" id="job-input" class="popup__field popup__field_type_job" name="jobInput" minlength="2" maxlength="200" required>
+          <span class="popup__field-error"></span>
+            <button class="popup__button" type="submit">Сохранить</button>
+          </fieldset>
+        <button class="popup__close popup__close_profile " type="button" aria-label="Закрыть"></button>
         </form>
-        <button class="popup__close popup__close_profile" type="button" aria-label="Закрыть">
-        </button>
       </div>
     </section>
 
     <section class="popup popup_place">
       <div class="popup__container">
         <h2 class="popup__title">Новое место</h2>
-        <form class="popup__form popup__form_place">
-          <input type="text" placeholder="Название" class="popup__field popup__field_type_title" name="PlaceInput">
-          <input type="text" placeholder="Ссылка на картинку" class="popup__field popup__field_type_address" name="AddressInput">
-          <button class="popup__button" type="submit">Создать</button>
+        <form class="popup__form popup__form_place" novalidate>
+          <fieldset class="popup__form-set">
+          <input type="text" placeholder="Название" id="title-input" class="popup__field popup__field_type_title" name="PlaceInput" minlength="2" maxlength="30" required>
+          <span class="popup__field-error"></span>
+          <input type="url" placeholder="Ссылка на картинку" id="link-input" class="popup__field popup__field_type_address" name="AddressInput" required>
+          <span class="popup__field-error"></span>
+            <button class="popup__button" type="submit">Создать</button>
+          </fieldset>
+
+          <button class="popup__close popup__close_place" type="button" aria-label="Закрыть"></button>
         </form>
-        <button class="popup__close popup__close_place" type="button" aria-label="Закрыть">
-        </button>
       </div>
     </section>
   </div>
@@ -78,7 +85,9 @@
       </div>
     </article>
     </template>
+
   <script src="./scripts/initialCards.js"></script>
   <script src="./scripts/index.js"></script>
+  <script src="./scripts/validate.js"></script>
 </body>
 </html>
