@@ -1,9 +1,9 @@
 const popupProfile = document.querySelector('.popup-profile');
 const popupPlace = document.querySelector('.popup_place');
 const popupBigImage = document.querySelector('.popup-big-image');
-const editButtonProfile = document.querySelector('.profile__edit-button');
-const addButtonProfile = document.querySelector('.profile__add-button');
-const closeButtons = document.querySelectorAll('.popup__close');
+const ButtonProfileEdit = document.querySelector('.profile__edit-button');
+const ButtonProfileAdd = document.querySelector('.profile__add-button');
+const ButtonsClose = document.querySelectorAll('.popup__close');
 const popupImage = document.querySelector('.popup__image');
 const popupImageText = document.querySelector('.popup__image-text');
 const formProfile = document.querySelector('.popup__form_profile');
@@ -12,10 +12,12 @@ const jobInput = document.querySelector('.popup__field_type_job');//попап �
 const formPlace = document.querySelector('.popup__form_place');
 const imageInputPlace = document.querySelector('.popup__field_type_address');//попап место ссылка
 const titleInputPlace = document.querySelector('.popup__field_type_title');//попап место название
+const ButtonPlaceSubmit = document.querySelector('.popup__button_place_submit');
 const textName = document.querySelector('.profile__name');//профиль на стр имя
 const jobName = document.querySelector('.profile__profession');//профиль на стр профессия
 const templateCard = document.querySelector('.templateCard');
 const elements = document.querySelector('.elements');
+
 
 function makeNewCard(name, link) {
   const newCard = templateCard.content.cloneNode(true);
@@ -28,7 +30,7 @@ function makeNewCard(name, link) {
   cardPhoto.alt = name;
   cardTitle.textContent = name;
   bigImage.addEventListener('click', function () {
-    openPopupImage(link, cardTitle.textContent);
+    openPopupImage(link, name.textContent);
   });
 
   likeButton.addEventListener('click', function () {
@@ -57,7 +59,7 @@ function closePopup(element) {
 }
 
 //универсальный обработчик крестиков
-closeButtons.forEach((button) => {
+ButtonsClose.forEach((button) => {
   const popup = button.closest('.popup');
   button.addEventListener('click', () => closePopup(popup));
 });
@@ -79,7 +81,14 @@ const addPopup = function () {
 
 //попап место
 const openPopupPlace = function () {
+  formPlace.reset();
   openPopup(popupPlace);
+  buttonDisable(ButtonPlaceSubmit);
+}
+
+//задизейблить кнопку
+const buttonDisable = (buttonElement) => {
+  buttonElement.classList.add('popup__button_inactive');
 }
 
 //попап с большой картинкой
@@ -122,7 +131,8 @@ function closePopupEsc(evt) {
 
 
 
-editButtonProfile.addEventListener('click', addPopup);
-addButtonProfile.addEventListener('click', openPopupPlace);
+
 formProfile.addEventListener('submit', editProfileUser);
 formPlace.addEventListener('submit', addCard);
+ButtonProfileEdit.addEventListener('click', addPopup);
+ButtonProfileAdd.addEventListener('click', openPopupPlace);

@@ -20,6 +20,11 @@
   opacity: 0.8;
 }
 
+/*.popup__button:disabled {*/
+/*  cursor: default;*/
+/*  color: #A44234;*/
+/*}*/
+
 @media screen and (max-width: 984px) {
   .popup__button {
     max-width: 238px;
