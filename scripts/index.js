@@ -89,6 +89,7 @@ const openPopupPlace = function () {
 //задизейблить кнопку
 const buttonDisable = (buttonElement) => {
   buttonElement.classList.add('popup__button_inactive');
+  buttonElement.setAttribute('disabled','');
 }
 
 //попап с большой картинкой
