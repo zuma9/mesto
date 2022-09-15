@@ -32,5 +32,5 @@ const validationConfig = {
     inactiveButtonClass: 'popup__button_inactive',
     inputErrorClass: 'popup__field_type-error',
     errorClass: 'popup__field-error_active',
-    formFieldset: '.popup__form-set',
+    formFieldset: '.popup__form-set'
 };

@@ -49,14 +49,24 @@ const setEventListeners = (formElement, config) => {
     });
 };
 
+// const enableValidation = (config) => {
+//     const formList = Array.from(document.querySelectorAll(config.formSelector));
+//     formList.forEach((formElement) => {
+//         const fieldsetList = Array.from(formElement.querySelectorAll(config.formFieldset));
+//         fieldsetList.forEach((fieldset) => {
+//             setEventListeners(fieldset, config);
+//         });
+//     });
+// };
+
 const enableValidation = (config) => {
     const formList = Array.from(document.querySelectorAll(config.formSelector));
-    formList.forEach((formElement) => {
-        const fieldsetList = Array.from(formElement.querySelectorAll(config.formFieldset));
-        fieldsetList.forEach((fieldset) => {
-            setEventListeners(fieldset, config);
+    formList.forEach((form) => {
+            form.addEventListener('submit', (evt) => {
+            evt.preventDefault();
+        })
+            setEventListeners(form, config);
         });
-    });
 };
 
 enableValidation(validationConfig);
