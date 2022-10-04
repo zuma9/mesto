@@ -1,4 +1,4 @@
-const initialCards = [
+export const initialCards = [
     {
         name: 'Лондон',
         link: 'https://images.unsplash.com/photo-1656800773829-a059959bfacf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
@@ -24,13 +24,3 @@ const initialCards = [
         link: 'https://images.unsplash.com/photo-1545209743-87a2a2a6fdad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=848&q=80'
     }
 ];
-
-const validationConfig = {
-    formSelector: '.popup__form',
-    inputSelector: '.popup__field',
-    submitButtonSelector: '.popup__button',
-    inactiveButtonClass: 'popup__button_inactive',
-    inputErrorClass: 'popup__field_type-error',
-    errorClass: 'popup__field-error_active',
-    formFieldset: '.popup__form-set'
-};
