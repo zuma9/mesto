@@ -29,6 +29,7 @@ export default class Card {
 
     _handleDelete() {
         this.newCard.remove();
+        this.newCard = null;
     };
 
 
