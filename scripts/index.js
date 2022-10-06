@@ -91,7 +91,7 @@ const addPopup = function () {
 const openPopupPlace = function () {
   formPlace.reset();
   openPopup(popupPlace);
-  formValidatorAdd.addButtonDisable();
+  formValidatorAdd.resetValidation();
   //buttonDisable(buttonPlaceSubmit);
 }
 
