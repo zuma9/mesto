@@ -4,20 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./pages/index.css">
+<!--  <link rel="stylesheet" href="pages/index.css">-->
 
   <title>Mesto</title>
 </head>
 <body>
   <div class="root">
     <header class="header">
-      <img src="images/logo.svg" alt="логотип место Россия" class="header__logo">
+      <img src="<%=require('./images/logo.svg')%>" alt="логотип место Россия" class="header__logo">
     </header>
 
     <main class="content">
       <section class="profile">
         <div class="profile__items">
-          <img src="images/kusto.png" alt="фото Жак-Ив Кусто в море" class="profile__avatar">
+          <img src="<%=require('./images/kusto.png')%>" alt="фото Жак-Ив Кусто в море" class="profile__avatar">
           <div class="profile__info">
             <div class="profile__name-edit">
               <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -70,7 +70,7 @@
   </div>
   <div class="popup popup-big-image">
     <div class="popup__image-box">
-      <img class="popup__image" src="." alt=".">
+      <img class="popup__image" src=".." alt=".">
       <p class="popup__image-text"></p>
       <button class="popup__close popup__close_image" type="button" aria-label="Закрыть"></button>
     </div>
@@ -78,13 +78,13 @@
   <template class="template">
     <article class="element">
       <button class="element__delete" type="button" aria-label="Корзина"></button>
-      <img class="element__photo" src="." alt=".">
+      <img class="element__photo" src=".." alt=".">
       <div class="element__footer">
         <h2 class="element__title"></h2>
         <button aria-label="Лайк" class="element__like" type="button"></button>
       </div>
     </article>
     </template>
-  <script type="module" src="./scripts/index.js"></script>
+<!--  <script type="module" src="pages/index.js"></script>-->
 </body>
 </html>
