@@ -15,8 +15,8 @@ const userInfo = new UserInfo('.profile__name', '.profile__profession');
 
 const popupWithImage = new PopupWithImage('.popup-big-image');
 
-const popupInfoForm = new PopupWithForm('.popup-profile', ({name, info}) => {
-  userInfo.setUserInfo({name, info});
+const popupInfoForm = new PopupWithForm('.popup-profile', ({ name, job }) => {
+  userInfo.setUserInfo({ name, job });
 });
 const popupCardForm = new PopupWithForm('.popup_place', (values) => {
   cardSection.addItem(createCard(values));
@@ -41,8 +41,8 @@ function createCard({ name, link }) {
 function openInfoPopup() {
   popupInfoForm.open();
   const userData = userInfo.getUserInfo();
-  const {name, info} = userData;
-  popupInfoForm.setInputValues( {name, info} );
+  const { name, job } = userData;
+  popupInfoForm.setInputValues({ name, job });
 
   formValidatorEdit.resetValidation();
 }

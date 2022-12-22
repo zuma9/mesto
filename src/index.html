@@ -28,8 +28,10 @@
         </div>
         <button class="profile__add-button" type="button" aria-label="Открыть"></button>
       </section>
+
       <section class="elements">
       </section>
+
     </main>
     <footer class="footer">
       <p class="footer__text">&copy; 2022 Mesto Russia</p>
@@ -40,9 +42,11 @@
         <h2 class="popup__title">Редактировать профиль</h2>
         <form class="popup__form popup__form_profile" novalidate>
           <fieldset class="popup__form-set">
-          <input type="text" placeholder="Введите имя" id="name-input" class="popup__field popup__field_type_name" name="nameInput" minlength="2" maxlength="40" required>
+          <input type="text" placeholder="Введите имя" id="name-input" class="popup__field popup__field_type_name" name="name"
+            minlength="2" maxlength="40" required>
           <span class="popup__field-error name-input-error"></span>
-          <input type="text" placeholder="Введите профессию" id="job-input" class="popup__field popup__field_type_job" name="jobInput" minlength="2" maxlength="200" required>
+          <input type="text" placeholder="Введите профессию" id="job-input" class="popup__field popup__field_type_job" name="job"
+            minlength="2" maxlength="200" required>
           <span class="popup__field-error job-input-error"></span>
             <button class="popup__button" type="submit">Сохранить</button>
           </fieldset>
@@ -56,9 +60,11 @@
         <h2 class="popup__title">Новое место</h2>
         <form class="popup__form popup__form_place" novalidate>
           <fieldset class="popup__form-set">
-          <input type="text" placeholder="Название" id="title-input" class="popup__field popup__field_type_title" name="PlaceInput" minlength="2" maxlength="30" required>
+          <input type="text" placeholder="Название" id="title-input" class="popup__field popup__field_type_title" name="name"
+            minlength="2" maxlength="30" required>
           <span class="popup__field-error title-input-error"></span>
-          <input type="url" placeholder="Ссылка на картинку" id="link-input" class="popup__field popup__field_type_address" name="AddressInput" required>
+          <input type="url" placeholder="Ссылка на картинку" id="link-input" class="popup__field popup__field_type_address"
+            name="link" required>
           <span class="popup__field-error link-input-error"></span>
             <button class="popup__button popup__button_place_submit" type="submit">Создать</button>
           </fieldset>
