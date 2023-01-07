@@ -17,7 +17,9 @@
     <main class="content">
       <section class="profile">
         <div class="profile__items">
-          <img src="<%=require('./images/kusto.png')%>" alt="фото Жак-Ив Кусто в море" class="profile__avatar">
+          <div class="profile__avatar-edit">
+              <img src="<%=require('./images/kusto.png')%>" alt="фото Жак-Ив Кусто в море" class="profile__avatar">
+            </div>
           <div class="profile__info">
             <div class="profile__name-edit">
               <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -68,12 +70,25 @@
           <span class="popup__field-error link-input-error"></span>
             <button class="popup__button popup__button_place_submit" type="submit">Создать</button>
           </fieldset>
-
           <button class="popup__close popup__close_place" type="button" aria-label="Закрыть"></button>
         </form>
       </div>
     </section>
-  </div>
+
+  <section class="popup popup-avatar">
+    <div class="popup__container">
+      <h2 class="popup__title">Обновить аватар</h2>
+      <form class="popup__form popup__form_avatar">
+        <fieldset class="popup__form-set">
+          <input type="url" placeholder="Ссылка на аватар" id="avatar-input" class="popup__field popup__field_type_address" name="avatar" required>
+          <span class="popup__field-error link-input-error"></span>
+          <button class="popup__button popup__button_avatar_submit" type="submit" aria-label="Сохранить">Сохранить</button>
+        </fieldset>
+        <button class="popup__close popup__close_avatar" type="button" aria-label="Закрыть"></button>
+      </form>
+    </div>
+  </section>
+
   <div class="popup popup-big-image">
     <div class="popup__image-box">
       <img class="popup__image" src=".." alt=".">
@@ -81,16 +96,29 @@
       <button class="popup__close popup__close_image" type="button" aria-label="Закрыть"></button>
     </div>
   </div>
+
+  <div class="popup popup-confirm">
+    <div class="popup__container">
+      <h2 class="popup__title popup__title_confirm">Вы уверены?</h2>
+      <button class="popup__remove-button" type="button">Да</button>
+      <button class="popup__close popup__close_confirm" type="button" aria-label="Закрыть"></button>
+    </div>
+  </div>
+
   <template class="template">
     <article class="element">
       <button class="element__delete" type="button" aria-label="Корзина"></button>
       <img class="element__photo" src=".." alt=".">
       <div class="element__footer">
         <h2 class="element__title"></h2>
-        <button aria-label="Лайк" class="element__like" type="button"></button>
+        <div class="element__like-box">
+          <button aria-label="Лайк" class="element__like" type="button"></button>
+          <span class="element__like-counter">2</span>
+        </div>
       </div>
     </article>
     </template>
 <!--  <script type="module" src="pages/index.js"></script>-->
+  </div>
 </body>
 </html>
