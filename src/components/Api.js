@@ -1,7 +1,7 @@
 export default class Api {
-    constructor(data) {
-        this._baseUrl = data.baseUrl;
-        this._headers = data.headers;
+    constructor(options) {
+        this._baseUrl = options.baseUrl;
+        this._headers = options.headers;
     }
 
     _checkResponse(res) {
@@ -14,88 +14,58 @@ export default class Api {
         }
     }
 
-    _request(url, options) {
-        return fetch(url, options)
-            .then((res) => this._checkResponse(res))
+    _request(url, options, body) {
+        return fetch(`${this._baseUrl}${url}`, {
+            method: options,
+            headers: this._headers,
+            body: body
+        }).then(this._checkResponse)
     }
 
 //получение данных профиля
     getUserInfo() {
-        return this._request(`${this._baseUrl}/users/me`, {
-            method: "GET",
-            headers: {
-                authorization: this._headers.authorization,
-            },
-        })
+        return this._request('/users/me', 'GET')
     }
 
-//получить карточки
+//получение карточки
     getInitialCards() {
-        return this._request(`${this._baseUrl}/cards`, {
-            method: "GET",
-            headers: {
-                authorization: this._headers.authorization,
-            },
-        })
+        return this._request('/cards','GET')
     }
 
 // обновление профиля
-    editProfile(newUserData) {
-        return this._request(`${this._baseUrl}/users/me`, {
-            method: "PATCH",
-            headers: this._headers,
-            body: JSON.stringify(newUserData),
-        })
+    editProfile(userInfo) {
+        return this._request('/users/me','PATCH', JSON.stringify({
+            name: `${userInfo.name}`,
+            about: `${userInfo.about}`
+        }))
     }
+
 
 // обновление аватара
-    editAvatar(avatarLink) {
-        return this._request(`${this._baseUrl}/users/me/avatar`, {
-            method: "PATCH",
-            headers: this._headers,
-            body: JSON.stringify({
-                avatar: avatarLink,
-            })
-        })
+    editAvatar(data) {
+        return this._request('/users/me/avatar','PATCH', JSON.stringify({
+            avatar: data.avatar,
+        }))
     }
 
-// добавление карточек
-    addCard(newCardData) {
-        return this._request(`${this._baseUrl}/cards`, {
-            method: "POST",
-            headers: this._headers,
-            body: JSON.stringify(newCardData),
-        })
+// добавление карточки
+    addCard(data) {
+        return this._request('/cards','POST', JSON.stringify(data))
     }
 
-// удаление карточек
+// удаление карточки
     deleteCard(cardId) {
-        return fetch(`${this._baseUrl}/cards/${cardId}`, {
-            method: "DELETE",
-            headers: {
-                authorization: this._headers.authorization
-            }
-        })
+        return this._request('/cards/' + cardId,'DELETE')
     }
 
 //добавление лайка карточки
-    setCardLike(cardId) {
-        return this._request(`${this._baseUrl}/cards/${cardId}/likes`, {
-            method: "PUT",
-            headers: {
-                authorization: this._headers.authorization
-            }
-        })
+    addCardLike(cardId){
+        return this._request('/cards/' + cardId + '/likes','PUT')
     }
 
 //удаление лайка карточки
-    removeCardLike(cardId) {
-        return this._request(`${this._baseUrl}/cards/${cardId}/likes`, {
-            method: "DELETE",
-            headers: {
-                authorization: this._headers.authorization,
-            }
-        })
+    deleteCardLike(cardId){
+        return this._request('/cards/' + cardId + '/likes','DELETE')
     }
 }
 
