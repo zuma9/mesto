@@ -59,13 +59,18 @@ export default class Api {
     }
 
 //добавление лайка карточки
-    addCardLike(cardId){
+    addCardLike(cardId) {
         return this._request('/cards/' + cardId + '/likes','PUT')
     }
 
 //удаление лайка карточки
-    deleteCardLike(cardId){
+    deleteCardLike(cardId) {
         return this._request('/cards/' + cardId + '/likes','DELETE')
     }
+
+// //универсальный метод переключения лайка
+//     toggleCardLike(cardId, isLiked) {
+//         return this._request(`/cards/${cardId}/likes`, isLiked ? 'DELETE' : 'PUT')
+//     }
 }
 
