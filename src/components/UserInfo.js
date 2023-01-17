@@ -14,21 +14,16 @@ export default class UserInfo {
     }
 
     setUserInfo({ name, about, _id, avatar }) {
-        this._nameElement.textContent = name;
-        this._infoElement.textContent = about;
+        this.setUserInfoPatch({ name, about });
         this._id = _id;
-        this._avatarElement.src = avatar;
+        this.setAvatar(avatar);
         this._avatarElement.alt = name;
     }
 
-    setUserInfoPatch({ name, about}) {
+    setUserInfoPatch({ name, about }) {
         this._nameElement.textContent = name;
         this._infoElement.textContent = about;
     }
-
-    // userId() {
-    //     return this._id
-    // }
 
     setAvatar(avatar) {
         this._avatarElement.src = avatar;

@@ -39,14 +39,14 @@ _hasInvalidInput () {
     });
 }
 
-addButtonDisable () {
+disableButtonSubmit () {
     this._buttonElement.classList.add(this._buttonDisabled);
     this._buttonElement.setAttribute('disabled','');
     }
 
 _toggleButtonState () {
     if (this._hasInvalidInput()) {
-        this.addButtonDisable();
+        this.disableButtonSubmit();
     } else {
         this._buttonElement.removeAttribute("disabled");
         this._buttonElement.classList.remove(this._inactiveButtonClass);

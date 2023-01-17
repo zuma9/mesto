@@ -1,10 +1,9 @@
 import Popup from "./Popup";
 
 export default class PopupWithConfirm extends Popup {
-    constructor(selector, callBack) {
+    constructor(selector) {
         super(selector);
-        this._callBack = callBack;
-        this._removeButton = this._popup.querySelector('.popup__remove-button');
+        this._buttonRemove = this._popup.querySelector('.popup__remove-button');
     }
 
     open(card, cardId) {
@@ -12,9 +11,15 @@ export default class PopupWithConfirm extends Popup {
         this._card = card
         this._cardId = cardId
     }
+
+    setCallBack(callBack) {
+        this._callBack = callBack;
+    };
+
+
     setEventListeners() {
         super.setEventListeners();
-        this._removeButton.addEventListener('click', () => {
+        this._buttonRemove.addEventListener('click', () => {
             this._callBack(this._card, this._cardId);
         });
     }
