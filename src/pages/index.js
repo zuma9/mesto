@@ -87,14 +87,13 @@ const popupAvatar = new PopupWithForm(".popup-avatar", submitHandlerAvatar);
 const popupConfirm = new PopupWithConfirm(
     ".popup-confirm"
 );
-popupConfirm.setCallBack(submitHandlerConfirm)
+const popupWithImage = new PopupWithImage(".popup-big-image");
 
 const userInfo = new UserInfo(
     ".profile__name",
     ".profile__profession",
     ".profile__avatar"
 );
-const popupWithImage = new PopupWithImage(".popup-big-image");
 
 const cardSection = new Section(
     {
@@ -103,11 +102,9 @@ const cardSection = new Section(
     ".elements"
 );
 
-function handlePopupOpen(card, cardId) {
-    popupConfirm.open(
-        card,
-        cardId
-    )
+function handlePopupConfirmOpen(card, cardId) {
+    popupConfirm.setCallBack(() => submitHandlerConfirm(card, cardId))
+    popupConfirm.open()
 }
 
 function createCard(data) {
@@ -118,7 +115,7 @@ function createCard(data) {
         popupWithImage.open.bind(popupWithImage),
         addLike,
         removeLike,
-        handlePopupOpen
+        handlePopupConfirmOpen
     );
 
     return card.generateCard();
