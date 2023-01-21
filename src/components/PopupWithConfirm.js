@@ -6,10 +6,8 @@ export default class PopupWithConfirm extends Popup {
         this._buttonRemove = this._popup.querySelector('.popup__remove-button');
     }
 
-    open(card, cardId) {
+    open() {
         super.open();
-        this._card = card
-        this._cardId = cardId
     }
 
     setCallBack(callBack) {
@@ -20,7 +18,7 @@ export default class PopupWithConfirm extends Popup {
     setEventListeners() {
         super.setEventListeners();
         this._buttonRemove.addEventListener('click', () => {
-            this._callBack(this._card, this._cardId);
+            this._callBack();
         });
     }
 }
